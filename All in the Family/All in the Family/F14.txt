@@ -1,0 +1,30 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F	Y			
+Mate	M	Y			
+Child Identical Twin 1	F	Y			
+Child Identical Twin 2	F	Y			
+Sibling 1	M	Y			
+Sibling 2	F	Y			
+Sibling 2 Mate	M	Y			
+Sibling 2 Child 1	F	Y	Down Syndrome	0	
+Sibling 2 Child 2	M	Y			
+Father	M	Y	High Cholesterol	52	
+Father Sibling	F	Y			
+Father Sibling Mate	M	Y			
+Father Sibling Child 1	M	Y	Autism	0	
+Father Sibling Child 2	F	Y			
+Paternal Grandmother	F	N	Alzheimer's Disease		78
+Paternal Grandfather	M	N	Heart Disease		
+Mother	F	Y	Migranes		
+Mother Sibling 1	M	Y			
+Mother Sibling 1 Mate	F	Y			
+Mother Sibling 1 Child 1	M	Y			
+Mother Sibling 1 Child 2	M	Y			
+Mother Sibling 1 Child 3	M	Y			
+Mother Sibling 2	F	Y			
+Mother Sibling 2 Mate	M	Y			
+Mother Sibling 2 Child 1	M	Y	Seizures	4	
+Mother Sibling 2 Child 2	M	Y			
+Mother Sibling 2 Child 3	F	Y			
+Maternal Grandmother	F	N	Stroke		75
+Maternal Grandfather	M	Y			

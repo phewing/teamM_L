@@ -1,0 +1,26 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death
+Self Twin	M	Y			
+Sibling Twin	M	Y			
+Sibling 2	M	Y			
+Father	M	Y			
+Paternal Grandmother	F	Y			
+Paternal Grandfather	M	Y			
+Paternal Grandfather Sibling 1	M	Y			
+Paternal Grandfather Sibling 1 Mate	F	Y			
+Paternal Grandfather Sibling 1 Child	F	Y			
+Paternal Grandfather Sibling 1 Child Mate	M	Y			
+Paternal Grandfather Sibling 1 Child Child	M	N	SIDS	0	0
+Paternal Grandfather Sibling 2	M	Y			
+Paternal Grandfather Sibling 2 Mate	F	Y			
+Paternal Grandfather Sibling 2 Child	F	Y	Lupus	37	
+Paternal Grandfather Sibling 2 Child Child	F	Y			
+Mother	F	Y			
+Mother Sibling 1	F	Y			
+Mother Sibling 1 Mate	M	Y			
+Mother Sibling 1 Child 1	F	Y			
+Mother Sibling 1 Child 2	F	Y			
+Mother Sibling 2 Identical Twin	F	Y			
+Mother Sibling 3 Identical Twin	F	Y	HTN	41	
+Maternal Grandmother	F	Y			
+Maternal Grandmother Sibling	F	Y			
+Maternal Grandfather	M	N	Accident		33

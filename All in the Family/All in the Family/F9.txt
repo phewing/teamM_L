@@ -1,0 +1,50 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F	Y			
+Father	M	Y			
+Father Sibling 1	F	Y			
+Father Sibling 1 Mate	M	Y			
+Father Sibling 1 Child	M	Y			
+Father Sibling 2	F	Y			
+Father Sibling 3	M	Y			
+Father Sibling 3 Mate	F	Y			
+Father Sibling 3 Child 1	F	Y			
+Father Sibling 3 Child 2	F	Y			
+Paternal Grandfather	M	N	Heart Attack	79	79
+Paternal Grandfather Sibling 1	M	Y			
+Paternal Grandfather Sibling 2	M	N			
+Paternal Grandfather Sibling 3	F	N			
+Paternal Grandfather Sibling 4	F	Y			
+Paternal Grandfather Mother	F	N			64
+Paternal Grandfather Father	M	N			55
+Paternal Grandmother	F	Y			
+Paternal Grandmother Sibling 1	F	Y			
+Paternal Grandmother Sibling 2	F	N			
+Paternal Grandmother Sibling 3	F	N			
+Paternal Grandmother Sibling 4	M	Y			
+Paternal Grandmother Sibling 5	M	N	Cancer		
+Paternal Grandmother Sibling 6	F	Y			
+Paternal Grandmother Sibling 7	M	N			
+Paternal Grandmother Sibling 8	M	Y			
+Paternal Grandmother Mother	F	N			
+Paternal Grandmother Father	M	N			92
+Mother	F	Y			
+Mother Sibling 1	F	Y			
+Mother Sibling 2	F	Y			
+Mother Sibling 2 Mate	M	Y			
+Mother Sibling 2 Child 1	F	Y			
+Mother Sibling 2 Child 2	M	Y			
+Mother Sibling 2 Child 3	M	N	Leukemia	2	2
+Mother Sibling 2 Child 4	F	Y			
+Mother Sibling 3	F	Y			
+Mother Sibling 4	F	Y	Melanoma		
+Mother Sibling 4 Mate	M	Y			
+Mother Sibling 4 Child	F	Y			
+Maternal Grandmother	F	N	Breast Cancer	49	76
+Maternal Grandmother Sibling 1	F	N	Ovarian Cancer	41	42
+Maternal Grandmother Sibling 2	M	Y			
+Maternal Grandmother Mother	F	N			
+Maternal Grandmother Father	M	N	Prostate Cancer		
+Maternal Grandfather	M	Y			
+Maternal Grandfather Sibling	M	N			
+Maternal Grandfather Mother	F	N			101
+Maternal Grandfather Father	M	N			

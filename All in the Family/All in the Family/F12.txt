@@ -1,0 +1,12 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	M	Y			
+Mate	F	Y			
+Child	F	Y			
+Mate Mother	F	Y	Rheumatoid Arthritis	41	
+Mate Father	M	Y			
+Sibling 1	M	Y			
+Sibling 2	M	Y			
+Sibling 2 Child 1	F	Y			
+Sibling 2 Child 2	M	Y			
+Father	M	Y	Type 2 Diabetes	54	
+Mother	F	Y			

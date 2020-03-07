@@ -1,0 +1,11 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F				
+Mate	M				
+Child	F				
+Sibling	F				
+Mother	F	N	Melanoma	71	
+Father	M				
+Father Sibling	M	N	Dementia	75	79
+Father Sibling Mate	F	N	Uterine Cancer	66	67
+Paternal Grandmother	F	N	Cancer	66	68
+Paternal Grandfather	M	N	Heart Attack	70	70

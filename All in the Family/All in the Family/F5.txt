@@ -1,0 +1,20 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self (Adopted)	M	Y	Type 1 Diabetes	6	
+Mate	F	Y			
+Child 1	M	Y			
+Child 2	F	Y			
+Sibling 1 (Through Adoption)	M	N	Suicide		38
+Sibling 1 (Through Adoption) Mate	F	Y			
+Sibling 1 (Through Adoption) Child	M	Y			
+Sibling 2 (Through Adoption)	F	Y			
+Sibling 2 Child 1 (Through Adoption)	M	Y			
+Sibling 2 Child 2 (Through Adoption)	F	Y	Hypertension	41	
+Father (Through Adoption)	M	N	Type 2 Diabetes	51	69
+Paternal Grandfather (Through Adoption)	M	N	Cancer	66	67
+Paternal Grandmother (Through Adoption)	F	N			70
+Mother (Through Adoption)	F	Y			
+Mother Sibling 1 (Through Adoption)	M	N	Killed in Action		28
+Mother Sibling 2 (Through Adoption)	F	N	Plane Accident		41
+Mother Sibling 3 (Through Adoption)	F	Y			
+Maternal Grandmother (Through Adoption)	F	N			
+Maternal Grandfather (Through Adoption)	M	N	Heart Attack		

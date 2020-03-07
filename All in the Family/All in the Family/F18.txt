@@ -1,0 +1,28 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	M	Y	Crohn's Disease	18	
+Mate	F	Y			
+Child 1	M	Y			
+Child 2	M	Y			
+Child 3	M	Y			
+Sibling	M	Y	Psoriasis	21	
+Sibling Mate	F	Y			
+Sibling Child 1	M	Y			
+Sibling Child 2	M	Y			
+Mother	F	Y	Alzheimer's Disease		
+Mother Sibling	M	Y			
+Maternal Grandmother	F	N	Lung Cancer	62	64
+Maternal Grandfather	M	N	Liver Cancer	88	89
+Father	M	Y	Hypertension	61	
+Father Mate 2	F	Y			
+Father Mate 2 Child	F	Y			
+Father Sibling	M	Y			
+Father Sibling Mate	F	Y			
+Father Sibling Child 1	M	Y			
+Father Sibling Child 2	F	Y			
+Paternal Grandmother (Adopted)	F	N	Hypertension	59	95
+Paternal Grandmother Mother (Through Adoption)	F	N			84
+Paternal Grandmother Father (Through Adoption)	M	N	Hypertension		79
+Paternal Grandfather	M	N	Hypercholesterolemia	66	100
+Paternal Grandfather Sibling	F	N	Lung Cancer	88	91
+Paternal Grandfather Mother	F	N			82
+Paternal Grandfathr Father	M	N			77

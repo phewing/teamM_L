@@ -1,0 +1,20 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self Identical Twin	F	Y	Hypertension	55	
+Mate	M	Y			
+Child 1	M	Y			
+Child 2	M	Y			
+Sibling Identical Twin	F	Y	Hypertension	62	
+Sibling 2	M	Y			
+Sibling 2 Mate	F	Y			
+Sibling 2 Child 1	F	Y			
+Sibling 2 Child 2	F	Y			
+Sibling 2 Child 3	M	Y			
+Sibling 3	M	Y			
+Father	M	N	Heart Attack	77	78
+Paternal Grandmother	F	N	Lung Cancer	81	81
+Paternal Grandfather	M	N			79
+Mother	F	N	Stroke	68	68
+Mother Sibling 1	M	N			
+Mother Sibling 2	M	N	Parkinson's Disease	69	71
+Maternal Grandmother	F	N	Fire		51
+Maternal Grandfather	M	N	Fire		55

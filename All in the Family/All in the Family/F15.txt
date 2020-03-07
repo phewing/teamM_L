@@ -1,0 +1,16 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F	Y			
+Mate	M	Y			
+Child 1	F	Y			
+Child 2	M	N	Car Accident		
+Child 3	F	Y			
+Sibling 1	F	N	Car Accident		27
+Sibling 2	F	N	Heart Disease	56	57
+Sibling 2 Mate	M	Y			
+Mother	F	N	Heart Disease	61	79
+Mother Sibling	F	N	Blood Infection	70	70
+Maternal Grandmother	F	N	Emphysema	60	65
+Maternal Grandfather	M	N	Cirrhosis of the Liver	55	65
+Father	M	Y	Parkinson's Disease	70	
+Paternal Grandmother	F	N			65
+Paternal Grandfather	M	N			60

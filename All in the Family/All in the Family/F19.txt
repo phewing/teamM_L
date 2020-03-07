@@ -1,0 +1,8 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F	Y	Epilepsy	1	
+Sibling	M	Y			
+Mother	F	Y			
+Father	M	Y			
+Father Sibling	F	Y	Hypertension	41	
+Paternal Grandmother	F	Y			
+Paternal Grandfather	M	Y	Hypercholesterolemia	58	

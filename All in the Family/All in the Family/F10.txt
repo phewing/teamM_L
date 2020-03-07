@@ -1,0 +1,19 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F	Y			
+Mate	M	Y			
+Child	F	Y			
+Sibling	F	Y			
+Sibling Mate	M	Y			
+Sibling Child	F	Y	Cystic Fibrosis	0	
+Father	M	Y			
+Father Sibling	M	Y			
+Father Sibling Mate	F	Y			
+Father Sibling Child	F	Y			
+Paternal Grandmother	F	N	Emphysema	72	84
+Paternal Grandfather	M	N			81
+Mother	F	Y			
+Mother Sibling 1	F	Y			
+Mother Sibling 2	F	N	Breast Cancer	55	57
+Mother Sibling 3	M	Y			
+Maternal Grandmother	F	Y			
+Maternal Grandfather	M	N	Lung Cancer	71	75

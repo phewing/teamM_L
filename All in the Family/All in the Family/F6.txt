@@ -1,0 +1,14 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	M	Y			
+Sibling	F	Y			
+Father	M	N	Stomach Cancer	44	44
+Father Sibling	M	Y	Achondroplasia	0	
+Paternal Grandmother	F	Y			
+Paternal Grandfather	M	N	Killed in Action		32
+Mother	F	Y			
+Mother Sibling	M	Y	Hypercholesterolemia	58	
+Mother Sibling Mate	F	Y			
+Mother Sibling Child 1	M	Y			
+Mother Sibling Child 2	F	Y	Hypertension	41	
+Maternal Grandfather	M	Y			
+Maternal Grandmother	F	N	Stroke	84	84

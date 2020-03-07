@@ -1,0 +1,10 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death
+Self	M	Y			
+Mate	F	Y			
+Child	F	Y			
+Sibling 1	M	Y			
+Sibling 2	F	Y			
+Mother	F	Y			
+Father	M	Y			
+Mate's Mother	F	Y			
+Mate's Father	M	N	Heart Attack	52	52

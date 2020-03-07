@@ -1,0 +1,12 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	M	Y	Seizures	16	
+Mother	F	Y			
+Mother Sibling	F	Y	Fibromyalgia	32	
+Mother Sibling Mate	M	Y			
+Maternal Grandfather	M	Y			
+Maternal Grandmother	F	Y	Gout	51	
+Father	M	Y			
+Father Sibling	M	Y			
+Father Sibling Mate	F	Y			
+Paternal Grandfather	M	N	Suicide		37
+Paternal Grandmother	F	Y			

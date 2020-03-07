@@ -1,0 +1,13 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	M	Y			
+Sibling 1	F	Y			
+Sibling Mate	M	Y			
+Sibling Child	M	Y			
+Sibling 2	F	Y			
+Father	M	Y			
+Paternal Grandmother	F	N	Stroke	68	68
+Paternal Grandfather	M	N	Heart Attack	77	78
+Mother	F	Y			
+Mother Sibling	M	Y	Hypertension	52	
+Maternal Grandfather	M	Y			
+Maternal Grandmother	F	N	Alzheimer's Disease	76	83

@@ -1,0 +1,21 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age	
+Self	M	Y	Hypercholesterolemia	44		
+Mate	F	N	Heart Disease	56	57	
+Child 1	M	Y	Hypercholesterolemia	32		
+Child 2	M	Y				
+Child 3	F	Y				
+Sibling 1	F	Y				
+Sibling 2	F	N	Lung Cancer	51	59	
+Sibling 2 Mate	M	Y				
+Sibling 2 Child 1	M	Y				
+Sibling 2 Child 2	M	Y				
+Mother	F	N	Uterine Cancer	66	68	
+Mother Sibling 1	F	Y	Grave's Disease	18		
+Mother Sibling 2	F	N	Alzheimer's Disease	67	74	
+Mother Sibling 3	M	N	Lung Cancer	54	56	
+Maternal Grandmother	F	N			59	
+Maternal Grandfather	M	N			60	
+Father	M	N	Dementia	76	79	
+Father Sibling	M	Y				
+Paternal Grandmother	F	N			72	
+Paternal Grandfather	M	N			70	

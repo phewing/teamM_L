@@ -1,0 +1,23 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	M	Y	Hypercholesterolemia	32	
+Mate	F	Y			
+Sibling 1	M	Y			
+Sibling 1 Mate	F	Y	Asthma	8	
+Sibling 1 Child	M	Y			
+Sibling 2	F	Y			
+Sibling 2 Mate	M	Y			
+Sibling 2 Child 1	F	Y			
+Sibling 2 Child 2	F	N	Tay Sachs Disease	0	0
+Mother	F	N	Heart Disease	56	57
+Mother Sibling 1	F	N	Car Accident		27
+Mother Sibling 2	F	Y			
+Maternal Grandmother	F	N	Heart Disease	61	79
+Maternal Grandfather	M	Y	Parkinson's Disease	70	
+Father	M	Y	Hypercholesterolemia	44	
+Father Sibling 1	F	Y			
+Father Sibling 2	F	N	Lung Cancer	51	59
+Father Sibling 2 Mate	M	Y			
+Father Sibling 2 Child 1	M	Y			
+Father Sibling 2 Child 2	M	Y			
+Paternal Grandmother	F	N	Female Cancer	66	68
+Paternal Grandfather	M	N	Dementia	76	79

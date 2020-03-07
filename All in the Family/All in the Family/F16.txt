@@ -1,0 +1,25 @@
+Relationship	Sex	Still Living	Disease 	Age of Onset	Death Age
+Self	F	Y			
+Mate	M	Y			
+Sibling 1	F	Y			
+Sibling 2	M	Y			
+Sibling 3	M	Y	Asthma	5	
+Sibling 4	M	Y			
+Sibling 5	F	Y			
+Father	M	Y			
+Father Sibling	F	Y	Hypertension		
+Father Sibling Mate	M	Y			
+Father Sibling Child 1	M	Y			
+Father Sibling Child 2	F	Y			
+Paternal Grandmother	F	Y			
+Paternal Grandfather	M	Y			
+Mother	F	Y			
+Mother Sibling 1	F	Y			
+Mother Sibling 2	F	Y			
+Mother Sibling 2 Mate	M	Y			
+Mother Sibling	M	Y	High Cholesterol		
+Mother Sibling Mate	F	Y			
+Mother Sibling Child 1	M	Y			
+Mother Sibling Child 2	F	Y			
+Maternal Grandmother	F	Y			
+Maternal Grandfather	M	N	Infection		57
