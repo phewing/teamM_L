@@ -1,0 +1,76 @@
+graph f16 {
+	"Self"                   [shape=oval, regular=1, color="pink"] ;
+	"Mate"                   [shape=box,  regular=1, color="blue"] ;
+	"Sibling 1"              [shape=oval, regular=1, color="pink"] ;
+	"Sibling 2"              [shape=box,  regular=1, color="blue"] ;
+	"Sibling 3"              [shape=box,  regular=1, color="blue"] ;
+	"Sibling 4"              [shape=box,  regular=1, color="blue"] ;
+	"Sibling 5"              [shape=oval, regular=1, color="pink"] ;
+	"Father"                 [shape=box,  regular=1, color="blue"] ;
+	"Father Sibling"         [shape=oval, regular=1, color="pink"] ;
+	"Father Sibling Mate"    [shape=box,  regular=1, color="blue"] ;
+	"Father Sibling Child 1" [shape=box,  regular=1, color="blue"] ;
+	"Father Sibling Child 2" [shape=oval, regular=1, color="pink"] ;
+	"Paternal Grandmother"   [shape=oval, regular=1, color="pink"] ;
+	"Paternal Grandfather"   [shape=box,  regular=1, color="blue"] ;
+	"Mother"                 [shape=oval, regular=1, color="pink"] ;
+	"Mother Sibling 1"       [shape=oval, regular=1, color="pink"] ;
+	"Mother Sibling 2"       [shape=oval, regular=1, color="pink"] ;
+	"Mother Sibling 2 Mate"  [shape=box,  regular=1, color="blue"] ;
+	"Mother Sibling"         [shape=box,  regular=1, color="blue"] ;
+	"Mother Sibling Mate"    [shape=oval, regular=1, color="pink"] ;
+	"Mother Sibling Child 1" [shape=box,  regular=1, color="blue"] ;
+	"Mother Sibling Child 2" [shape=oval, regular=1, color="pink"] ;
+	"Maternal Grandmother"   [shape=oval, regular=1, color="pink"] ;
+	"Maternal Grandfather"   [shape=box,  regular=1, color="blue"] ;
+
+	"self+mate"         [shape=diamond,label="",height=0.25,width=0.25] ;
+	"father+mother"     [shape=diamond,label="",height=0.25,width=0.25] ;
+    "pGFather+pGMother" [shape=diamond,label="",height=0.25,width=0.25] ;
+	"mGFather+mGMother" [shape=diamond,label="",height=0.25,width=0.25] ;
+
+    "fSibling+fSiblingMate"   [shape=diamond,label="",height=0.25,width=0.25] ;
+    "mSibling+mSiblingMate"   [shape=diamond,label="",height=0.25,width=0.25] ;
+    "mSibling2+mSibling2Mate" [shape=diamond,label="",height=0.25,width=0.25] ;
+
+    "Father" -- "father+mother" -- "Mother" ;
+    "Self" -- "self+mate" -- "Mate" ;
+    "Paternal Grandfather" -- "pGFather+pGMother" -- "Paternal Grandmother" ;
+    "Maternal Grandfather" -- "mGFather+mGMother" -- "Maternal Grandmother" ;
+
+    "father+mother" -- "Self" ;
+    "father+mother" -- "Sibling 1" ;
+    "father+mother" -- "Sibling 2" ;
+    "father+mother" -- "Sibling 3" ;
+    "father+mother" -- "Sibling 4" ;
+    "father+mother" -- "Sibling 5" ;
+
+    "pGFather+pGMother" -- "Father" ;
+    "pGFather+pGMother" -- "Father Sibling" ;
+
+    "Father Sibling" -- "fSibling+fSiblingMate" -- "Father Sibling Mate" ;
+    "Mother Sibling" -- "mSibling+mSiblingMate" -- "Mother Sibling Mate" ;
+    "Mother Sibling 2" -- "mSibling2+mSibling2Mate" -- "Mother Sibling 2 Mate";
+
+    "mGFather+mGMother" -- "Mother" ;
+    "mGFather+mGMother" -- "Mother Sibling" ;
+    "mGFather+mGMother" -- "Mother Sibling 1" ;
+    "mGFather+mGMother" -- "Mother Sibling 2" ;
+
+    "fSibling+fSiblingMate" -- "Father Sibling Child 1" ;
+    "fSibling+fSiblingMate" -- "Father Sibling Child 2" ;
+
+    "mSibling+mSiblingMate" -- "Mother Sibling Child 1" ;
+    "mSibling+mSiblingMate" -- "Mother Sibling Child 2" ;
+
+    {rank=same; "Self" "self+mate" "Mate"}
+    {rank=same; "Father" "father+mother" "Mother"}
+    {rank=same; "Paternal Grandfather" "pGFather+pGMother" "Paternal Grandmother"}
+    {rank=same; "Maternal Grandfather" "mGFather+mGMother" "Maternal Grandmother"}
+    {rank=same; "Father Sibling" "fSibling+fSiblingMate" "Father Sibling Mate"}
+    {rank=same; "Mother Sibling" "mSibling+mSiblingMate" "Mother Sibling Mate"}
+    {rank=same; "Mother Sibling 2" "mSibling2+mSibling2Mate" "Mother Sibling 2 Mate"}
+    {rank=same; "Father Sibling Child 1" "Father Sibling Child 2"}
+    {rank=same; "Mother Sibling Child 1" "Mother Sibling Child 2"}
+
+}
