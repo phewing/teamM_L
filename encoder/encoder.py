@@ -289,6 +289,8 @@ if __name__ == "__main__":
         "F20.txt"
     ]
 
+    roots: Dict[str, str] = {}
+
     # Load in our data
     for i, file_name in enumerate(file_names):
         df = pandas.read_csv('../All in the Family/All in the Family/' + file_name, sep="\t")
@@ -298,6 +300,10 @@ if __name__ == "__main__":
         for j, value in enumerate(df.values):
             uuid = str(uuid4())
             person = ndarray_to_person(i + 1, uuid, value)
+
+            if person.is_root:
+                roots[str(i+1)] = person.uuid
+
             people[uuid] = person
             people_needing_processed.append(people[uuid])
 
@@ -364,5 +370,10 @@ if __name__ == "__main__":
 
     encodings = {person.uuid: person.to_encodable_dict() for person in people.values()}
 
+    output_data = {
+        "roots": roots,
+        "nodes": encodings
+    }
+
     with open("output.json", "w") as f:
-        f.write(json.dumps(encodings))
+        f.write(json.dumps(output_data))
