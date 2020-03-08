@@ -25,4 +25,4 @@ Paternal Grandmother Father (Through Adoption)	M	N	Hypertension		79
 Paternal Grandfather	M	N	Hypercholesterolemia	66	100
 Paternal Grandfather Sibling	F	N	Lung Cancer	88	91
 Paternal Grandfather Mother	F	N			82
-Paternal Grandfathr Father	M	N			77
+Paternal Grandfather Father	M	N			77
