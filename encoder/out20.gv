@@ -1,0 +1,57 @@
+
+graph f20 {
+"Self" [shape=box, regular=1, color="blue"];
+"Mate" [shape=oval, regular=1, color="pink"];
+"Sibling 1" [shape=box, regular=1, color="blue"];
+"Sibling 1 Mate" [shape=oval, regular=1, color="pink"];
+"Sibling 1 Child" [shape=box, regular=1, color="blue"];
+"Sibling 2" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Mate" [shape=box, regular=1, color="blue"];
+"Sibling 2 Child 1" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Child 2" [shape=oval, regular=1, color="pink"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 1" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 2" [shape=oval, regular=1, color="pink"];
+"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Maternal Grandfather" [shape=box, regular=1, color="blue"];
+"Father" [shape=box, regular=1, color="blue"];
+"Father Sibling 1" [shape=oval, regular=1, color="pink"];
+"Father Sibling 2" [shape=oval, regular=1, color="pink"];
+"Father Sibling 2 Mate" [shape=box, regular=1, color="blue"];
+"Father Sibling 2 Child 1" [shape=box, regular=1, color="blue"];
+"Father Sibling 2 Child 2" [shape=box, regular=1, color="blue"];
+"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+
+"self+mate" [shape=point];
+"sibling1+sibling1mate" [shape=point];
+"sibling2mate+sibling2" [shape=point];
+"maternalgrandfather+maternalgrandmother" [shape=point];
+"father+mother" [shape=point];
+"fathersibling2mate+fathersibling2" [shape=point];
+"paternalgrandfather+paternalgrandmother" [shape=point];
+
+"Self" -- "self+mate" -- "Mate";
+"Sibling 1" -- "sibling1+sibling1mate" -- "Sibling 1 Mate";
+"Sibling 2 Mate" -- "sibling2mate+sibling2" -- "Sibling 2";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Father" -- "father+mother" -- "Mother";
+"Father Sibling 2 Mate" -- "fathersibling2mate+fathersibling2" -- "Father Sibling 2";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+
+"father+mother" -- "Self";
+"father+mother" -- "Sibling 1";
+"sibling1+sibling1mate" -- "Sibling 1 Child";
+"father+mother" -- "Sibling 2";
+"sibling2mate+sibling2" -- "Sibling 2 Child 1";
+"sibling2mate+sibling2" -- "Sibling 2 Child 2";
+"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
+"paternalgrandfather+paternalgrandmother" -- "Father";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling 1";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling 2";
+"fathersibling2mate+fathersibling2" -- "Father Sibling 2 Child 1";
+"fathersibling2mate+fathersibling2" -- "Father Sibling 2 Child 2";
+}
+    

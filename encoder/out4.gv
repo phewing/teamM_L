@@ -1,0 +1,30 @@
+
+graph f4 {
+"Self" [shape=oval, regular=1, color="pink"];
+"Mate" [shape=box, regular=1, color="blue"];
+"Child" [shape=oval, regular=1, color="pink"];
+"Sibling" [shape=oval, regular=1, color="pink"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Father" [shape=box, regular=1, color="blue"];
+"Father Sibling" [shape=box, regular=1, color="blue"];
+"Father Sibling Mate" [shape=oval, regular=1, color="pink"];
+"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+
+"mate+self" [shape=point];
+"father+mother" [shape=point];
+"fathersibling+fathersiblingmate" [shape=point];
+"paternalgrandfather+paternalgrandmother" [shape=point];
+
+"Mate" -- "mate+self" -- "Self";
+"Father" -- "father+mother" -- "Mother";
+"Father Sibling" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+
+"father+mother" -- "Self";
+"mate+self" -- "Child";
+"father+mother" -- "Sibling";
+"paternalgrandfather+paternalgrandmother" -- "Father";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling";
+}
+    

@@ -1,0 +1,34 @@
+
+graph f2 {
+"Self" [shape=box, regular=1, color="blue"];
+"Sibling 1" [shape=oval, regular=1, color="pink"];
+"Sibling Mate" [shape=box, regular=1, color="blue"];
+"Sibling Child" [shape=box, regular=1, color="blue"];
+"Sibling 2" [shape=oval, regular=1, color="pink"];
+"Father" [shape=box, regular=1, color="blue"];
+"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Mother Sibling" [shape=box, regular=1, color="blue"];
+"Maternal Grandfather" [shape=box, regular=1, color="blue"];
+"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+
+"siblingmate+sibling1" [shape=point];
+"father+mother" [shape=point];
+"paternalgrandfather+paternalgrandmother" [shape=point];
+"maternalgrandfather+maternalgrandmother" [shape=point];
+
+"Sibling Mate" -- "siblingmate+sibling1" -- "Sibling 1";
+"Father" -- "father+mother" -- "Mother";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+
+"father+mother" -- "Self";
+"father+mother" -- "Sibling 1";
+"siblingmate+sibling1" -- "Sibling Child";
+"father+mother" -- "Sibling 2";
+"paternalgrandfather+paternalgrandmother" -- "Father";
+"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling";
+}
+    

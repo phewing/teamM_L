@@ -1,0 +1,49 @@
+
+graph f3 {
+"Self Identical Twin" [shape=oval, regular=1, color="pink"];
+"Mate" [shape=box, regular=1, color="blue"];
+"Child 1" [shape=box, regular=1, color="blue"];
+"Child 2" [shape=box, regular=1, color="blue"];
+"Sibling Identical Twin" [shape=oval, regular=1, color="pink"];
+"Sibling 2" [shape=box, regular=1, color="blue"];
+"Sibling 2 Mate" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Child 1" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Child 2" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Child 3" [shape=box, regular=1, color="blue"];
+"Sibling 3" [shape=box, regular=1, color="blue"];
+"Father" [shape=box, regular=1, color="blue"];
+"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 1" [shape=box, regular=1, color="blue"];
+"Mother Sibling 2" [shape=box, regular=1, color="blue"];
+"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Maternal Grandfather" [shape=box, regular=1, color="blue"];
+
+"mate+selfidenticaltwin" [shape=point];
+"sibling2+sibling2mate" [shape=point];
+"father+mother" [shape=point];
+"paternalgrandfather+paternalgrandmother" [shape=point];
+"maternalgrandfather+maternalgrandmother" [shape=point];
+
+"Mate" -- "mate+selfidenticaltwin" -- "Self Identical Twin";
+"Sibling 2" -- "sibling2+sibling2mate" -- "Sibling 2 Mate";
+"Father" -- "father+mother" -- "Mother";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+
+"father+mother" -- "Self Identical Twin";
+"mate+selfidenticaltwin" -- "Child 1";
+"mate+selfidenticaltwin" -- "Child 2";
+"father+mother" -- "Sibling Identical Twin";
+"father+mother" -- "Sibling 2";
+"sibling2+sibling2mate" -- "Sibling 2 Child 1";
+"sibling2+sibling2mate" -- "Sibling 2 Child 2";
+"sibling2+sibling2mate" -- "Sibling 2 Child 3";
+"father+mother" -- "Sibling 3";
+"paternalgrandfather+paternalgrandmother" -- "Father";
+"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
+}
+    

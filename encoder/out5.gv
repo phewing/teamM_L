@@ -1,0 +1,47 @@
+
+graph f5 {
+"Self (Adopted)" [shape=box, regular=1, color="blue"];
+"Mate" [shape=oval, regular=1, color="pink"];
+"Child 1" [shape=box, regular=1, color="blue"];
+"Child 2" [shape=oval, regular=1, color="pink"];
+"Sibling 1 (Through Adoption)" [shape=box, regular=1, color="blue"];
+"Sibling 1 (Through Adoption) Mate" [shape=oval, regular=1, color="pink"];
+"Sibling 1 (Through Adoption) Child" [shape=box, regular=1, color="blue"];
+"Sibling 2 (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Child 1 (Through Adoption)" [shape=box, regular=1, color="blue"];
+"Sibling 2 Child 2 (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Father (Through Adoption)" [shape=box, regular=1, color="blue"];
+"Paternal Grandfather (Through Adoption)" [shape=box, regular=1, color="blue"];
+"Paternal Grandmother (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Mother (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 1 (Through Adoption)" [shape=box, regular=1, color="blue"];
+"Mother Sibling 2 (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 3 (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Maternal Grandmother (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Maternal Grandfather (Through Adoption)" [shape=box, regular=1, color="blue"];
+
+"self(adopted)+mate" [shape=point];
+"sibling1(throughadoption)+sibling1(throughadoption)mate" [shape=point];
+"father(throughadoption)+mother(throughadoption)" [shape=point];
+"paternalgrandfather(throughadoption)+paternalgrandmother(throughadoption)" [shape=point];
+"maternalgrandfather(throughadoption)+maternalgrandmother(throughadoption)" [shape=point];
+
+"Self (Adopted)" -- "self(adopted)+mate" -- "Mate";
+"Sibling 1 (Through Adoption)" -- "sibling1(throughadoption)+sibling1(throughadoption)mate" -- "Sibling 1 (Through Adoption) Mate";
+"Father (Through Adoption)" -- "father(throughadoption)+mother(throughadoption)" -- "Mother (Through Adoption)";
+"Paternal Grandfather (Through Adoption)" -- "paternalgrandfather(throughadoption)+paternalgrandmother(throughadoption)" -- "Paternal Grandmother (Through Adoption)";
+"Maternal Grandfather (Through Adoption)" -- "maternalgrandfather(throughadoption)+maternalgrandmother(throughadoption)" -- "Maternal Grandmother (Through Adoption)";
+
+"father(throughadoption)+mother(throughadoption)" -- "Self (Adopted)";
+"self(adopted)+mate" -- "Child 1";
+"self(adopted)+mate" -- "Child 2";
+"father(throughadoption)+mother(throughadoption)" -- "Sibling 1 (Through Adoption)";
+"sibling1(throughadoption)+sibling1(throughadoption)mate" -- "Sibling 1 (Through Adoption) Child";
+"father(throughadoption)+mother(throughadoption)" -- "Sibling 2 (Through Adoption)";
+"paternalgrandfather(throughadoption)+paternalgrandmother(throughadoption)" -- "Father (Through Adoption)";
+"maternalgrandfather(throughadoption)+maternalgrandmother(throughadoption)" -- "Mother (Through Adoption)";
+"maternalgrandfather(throughadoption)+maternalgrandmother(throughadoption)" -- "Mother Sibling 1 (Through Adoption)";
+"maternalgrandfather(throughadoption)+maternalgrandmother(throughadoption)" -- "Mother Sibling 2 (Through Adoption)";
+"maternalgrandfather(throughadoption)+maternalgrandmother(throughadoption)" -- "Mother Sibling 3 (Through Adoption)";
+}
+    

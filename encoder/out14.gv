@@ -1,0 +1,72 @@
+
+graph f14 {
+"Self" [shape=oval, regular=1, color="pink"];
+"Mate" [shape=box, regular=1, color="blue"];
+"Child Identical Twin 1" [shape=oval, regular=1, color="pink"];
+"Child Identical Twin 2" [shape=oval, regular=1, color="pink"];
+"Sibling 1" [shape=box, regular=1, color="blue"];
+"Sibling 2" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Mate" [shape=box, regular=1, color="blue"];
+"Sibling 2 Child 1" [shape=oval, regular=1, color="pink"];
+"Sibling 2 Child 2" [shape=box, regular=1, color="blue"];
+"Father" [shape=box, regular=1, color="blue"];
+"Father Sibling" [shape=oval, regular=1, color="pink"];
+"Father Sibling Mate" [shape=box, regular=1, color="blue"];
+"Father Sibling Child 1" [shape=box, regular=1, color="blue"];
+"Father Sibling Child 2" [shape=oval, regular=1, color="pink"];
+"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 1" [shape=box, regular=1, color="blue"];
+"Mother Sibling 1 Mate" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 1 Child 1" [shape=box, regular=1, color="blue"];
+"Mother Sibling 1 Child 2" [shape=box, regular=1, color="blue"];
+"Mother Sibling 1 Child 3" [shape=box, regular=1, color="blue"];
+"Mother Sibling 2" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 2 Mate" [shape=box, regular=1, color="blue"];
+"Mother Sibling 2 Child 1" [shape=box, regular=1, color="blue"];
+"Mother Sibling 2 Child 2" [shape=box, regular=1, color="blue"];
+"Mother Sibling 2 Child 3" [shape=oval, regular=1, color="pink"];
+"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Maternal Grandfather" [shape=box, regular=1, color="blue"];
+
+"mate+self" [shape=point];
+"sibling2mate+sibling2" [shape=point];
+"father+mother" [shape=point];
+"fathersiblingmate+fathersibling" [shape=point];
+"paternalgrandfather+paternalgrandmother" [shape=point];
+"mothersibling1+mothersibling1mate" [shape=point];
+"mothersibling2mate+mothersibling2" [shape=point];
+"maternalgrandfather+maternalgrandmother" [shape=point];
+
+"Mate" -- "mate+self" -- "Self";
+"Sibling 2 Mate" -- "sibling2mate+sibling2" -- "Sibling 2";
+"Father" -- "father+mother" -- "Mother";
+"Father Sibling Mate" -- "fathersiblingmate+fathersibling" -- "Father Sibling";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Mother Sibling 1" -- "mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Mate";
+"Mother Sibling 2 Mate" -- "mothersibling2mate+mothersibling2" -- "Mother Sibling 2";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+
+"father+mother" -- "Self";
+"mate+self" -- "Child Identical Twin 1";
+"mate+self" -- "Child Identical Twin 2";
+"father+mother" -- "Sibling 1";
+"father+mother" -- "Sibling 2";
+"sibling2mate+sibling2" -- "Sibling 2 Child 1";
+"sibling2mate+sibling2" -- "Sibling 2 Child 2";
+"paternalgrandfather+paternalgrandmother" -- "Father";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling";
+"fathersiblingmate+fathersibling" -- "Father Sibling Child 1";
+"fathersiblingmate+fathersibling" -- "Father Sibling Child 2";
+"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
+"mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Child 1";
+"mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Child 2";
+"mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Child 3";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
+"mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 1";
+"mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 2";
+"mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 3";
+}
+    

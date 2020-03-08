@@ -1,0 +1,67 @@
+
+graph f18 {
+"Self" [shape=box, regular=1, color="blue"];
+"Mate" [shape=oval, regular=1, color="pink"];
+"Child 1" [shape=box, regular=1, color="blue"];
+"Child 2" [shape=box, regular=1, color="blue"];
+"Child 3" [shape=box, regular=1, color="blue"];
+"Sibling" [shape=box, regular=1, color="blue"];
+"Sibling Mate" [shape=oval, regular=1, color="pink"];
+"Sibling Child 1" [shape=box, regular=1, color="blue"];
+"Sibling Child 2" [shape=box, regular=1, color="blue"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Mother Sibling" [shape=box, regular=1, color="blue"];
+"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Maternal Grandfather" [shape=box, regular=1, color="blue"];
+"Father" [shape=box, regular=1, color="blue"];
+"Father Mate 2" [shape=oval, regular=1, color="pink"];
+"Father Mate 2 Child" [shape=oval, regular=1, color="pink"];
+"Father Sibling" [shape=box, regular=1, color="blue"];
+"Father Sibling Mate" [shape=oval, regular=1, color="pink"];
+"Father Sibling Child 1" [shape=box, regular=1, color="blue"];
+"Father Sibling Child 2" [shape=oval, regular=1, color="pink"];
+"Paternal Grandmother (Adopted)" [shape=oval, regular=1, color="pink"];
+"Paternal Grandmother Mother (Through Adoption)" [shape=oval, regular=1, color="pink"];
+"Paternal Grandmother Father (Through Adoption)" [shape=box, regular=1, color="blue"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Paternal Grandfather Sibling" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather Mother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather Father" [shape=box, regular=1, color="blue"];
+
+"self+mate" [shape=point];
+"sibling+siblingmate" [shape=point];
+"maternalgrandfather+maternalgrandmother" [shape=point];
+"father+fathermate2" [shape=point];
+"fathersibling+fathersiblingmate" [shape=point];
+"paternalgrandmotherfather(throughadoption)+paternalgrandmothermother(throughadoption)" [shape=point];
+"paternalgrandfather+paternalgrandmother(adopted)" [shape=point];
+"paternalgrandfatherfather+paternalgrandfathermother" [shape=point];
+
+"Self" -- "self+mate" -- "Mate";
+"Sibling" -- "sibling+siblingmate" -- "Sibling Mate";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Father" -- "father+fathermate2" -- "Father Mate 2";
+"Father Sibling" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate";
+"Paternal Grandmother Father (Through Adoption)" -- "paternalgrandmotherfather(throughadoption)+paternalgrandmothermother(throughadoption)" -- "Paternal Grandmother Mother (Through Adoption)";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother(adopted)" -- "Paternal Grandmother (Adopted)";
+"Paternal Grandfather Father" -- "paternalgrandfatherfather+paternalgrandfathermother" -- "Paternal Grandfather Mother";
+
+"father+fathermate2" -- "Self";
+"self+mate" -- "Child 1";
+"self+mate" -- "Child 2";
+"self+mate" -- "Child 3";
+"father+fathermate2" -- "Sibling";
+"sibling+siblingmate" -- "Sibling Child 1";
+"sibling+siblingmate" -- "Sibling Child 2";
+"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling";
+"paternalgrandfather+paternalgrandmother(adopted)" -- "Father";
+"father+fathermate2" -- "Father Mate 2 Child";
+"paternalgrandfather+paternalgrandmother(adopted)" -- "Father Sibling";
+"fathersibling+fathersiblingmate" -- "Father Sibling Child 1";
+"fathersibling+fathersiblingmate" -- "Father Sibling Child 2";
+"paternalgrandmotherfather(throughadoption)+paternalgrandmothermother(throughadoption)" -- "Paternal Grandmother (Adopted)";
+"paternalgrandfatherfather+paternalgrandfathermother" -- "Paternal Grandfather";
+"paternalgrandfatherfather+paternalgrandfathermother" -- "Paternal Grandfather Sibling";
+}
+    

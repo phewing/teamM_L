@@ -1,0 +1,48 @@
+
+graph f10 {
+"Self" [shape=oval, regular=1, color="pink"];
+"Mate" [shape=box, regular=1, color="blue"];
+"Child" [shape=oval, regular=1, color="pink"];
+"Sibling" [shape=oval, regular=1, color="pink"];
+"Sibling Mate" [shape=box, regular=1, color="blue"];
+"Sibling Child" [shape=oval, regular=1, color="pink"];
+"Father" [shape=box, regular=1, color="blue"];
+"Father Sibling" [shape=box, regular=1, color="blue"];
+"Father Sibling Mate" [shape=oval, regular=1, color="pink"];
+"Father Sibling Child" [shape=oval, regular=1, color="pink"];
+"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Mother" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 1" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 2" [shape=oval, regular=1, color="pink"];
+"Mother Sibling 3" [shape=box, regular=1, color="blue"];
+"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Maternal Grandfather" [shape=box, regular=1, color="blue"];
+
+"mate+self" [shape=point];
+"siblingmate+sibling" [shape=point];
+"father+mother" [shape=point];
+"fathersibling+fathersiblingmate" [shape=point];
+"paternalgrandfather+paternalgrandmother" [shape=point];
+"maternalgrandfather+maternalgrandmother" [shape=point];
+
+"Mate" -- "mate+self" -- "Self";
+"Sibling Mate" -- "siblingmate+sibling" -- "Sibling";
+"Father" -- "father+mother" -- "Mother";
+"Father Sibling" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+
+"father+mother" -- "Self";
+"mate+self" -- "Child";
+"father+mother" -- "Sibling";
+"siblingmate+sibling" -- "Sibling Child";
+"paternalgrandfather+paternalgrandmother" -- "Father";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling";
+"fathersibling+fathersiblingmate" -- "Father Sibling Child";
+"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 3";
+}
+    

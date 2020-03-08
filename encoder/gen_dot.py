@@ -48,7 +48,7 @@ def write_dot(roots, people, tree_number: int, output_path: str):
     # Generate lines from parents to children
     children_with_parents = list(filter(lambda person: person.father is not None or person.mother is not None, people_in_tree))
     parent_to_child_lines_output = "\n".join([generate_line_from_parent_to_child(child.father, child)
-                                              for child in children_with_parents])
+                                              for child in children_with_parents if child.father and child.father.mate])
 
     # Generate lines between partners
     partner_line_output = "\n".join([generate_horizontal_lines_text_from_male(male) for male in males_in_tree_with_mate])
@@ -110,6 +110,7 @@ if __name__ == "__main__":
 
     roots, people = get_roots_and_people()
 
-    result = write_dot(roots, people, 16, 'out.gv')
+    for i in range(1, 21):
+        result = write_dot(roots, people, i, f'out{i}.gv')
 
     print(result)
