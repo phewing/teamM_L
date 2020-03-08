@@ -1,15 +1,15 @@
 
 graph f4 {
-"Self" [shape=oval, regular=1, color="pink"];
-"Mate" [shape=box, regular=1, color="blue"];
-"Child" [shape=oval, regular=1, color="pink"];
-"Sibling" [shape=oval, regular=1, color="pink"];
-"Mother" [shape=oval, regular=1, color="pink"];
-"Father" [shape=box, regular=1, color="blue"];
-"Father Sibling" [shape=box, regular=1, color="blue"];
-"Father Sibling Mate" [shape=oval, regular=1, color="pink"];
-"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Self" [shape=oval, style=filled, regular=1, color="pink"];
+"Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Child" [shape=oval, style=filled, regular=1, color="pink"];
+"Sibling" [shape=oval, style=filled, regular=1, color="pink"];
+"Mother" [shape=oval, style=filled, regular=1, color="pink"];
+"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Mate" [shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "mate+self" [shape=point];
 "father+mother" [shape=point];

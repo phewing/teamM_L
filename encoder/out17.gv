@@ -1,14 +1,14 @@
 
 graph f17 {
-"Self" [shape=box, regular=1, color="blue"];
-"Sibling" [shape=box, regular=1, color="blue"];
-"Father" [shape=box, regular=1, color="blue"];
-"Mother Identical Twin" [shape=oval, regular=1, color="pink"];
-"Mother Sibling Identical Twin" [shape=oval, regular=1, color="pink"];
-"Mother Sibling 1" [shape=box, regular=1, color="blue"];
-"Mother Sibling 2" [shape=box, regular=1, color="blue"];
-"Maternal Grandfather" [shape=box, regular=1, color="blue"];
-"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Identical Twin" [shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling Identical Twin" [shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
 
 "father+motheridenticaltwin" [shape=point];
 "maternalgrandfather+maternalgrandmother" [shape=point];

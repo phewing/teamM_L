@@ -41,13 +41,23 @@
   </div>
 
   <div class="container">
-    <embed type="image/svg+xml" src="/static/images/F16.svg" id="svg-container"/>
-
+    <embed type="image/svg+xml" src="/static/images/F16.svg" id="svg-container" width="1000px" height="500px"/>
         <div class="row">
           <div class="one-half column" style="margin-top: 12.5%">
-            <h4>Batch Entry</h4>
-            <p>Choose a file to upload</p>
-            <button id="uploadbutton" onclick=chooseUpload();>Choose...</button>
+            <!-- <h4>Batch Entry</h4>
+            <p>Choose a file to upload</p> -->
+            <!-- <button id="uploadbutton" onclick=chooseUpload();>Choose...</button> -->
+            <label for="graph-selector">Select graph to display:
+              <select id="graph-selector">
+                <option value="F1.svg">Graph 1</option>
+                <option value="F2.svg">Graph 2</option>
+                <option value="F3.svg">Graph 3</option>
+                <option value="F4.svg">Graph 4</option>
+                <option value="F5.svg">Graph 5</option>
+                <option value="F6.svg">Graph 6</option>
+                <option value="F7.svg">Graph 7</option>
+              </select>
+            </label>
           </div>
         </div>
 
@@ -70,10 +80,17 @@
 
   <script>
     // var panZoomTiger = svgPanZoom('#svg-container');
-    document.getElementById('svg-container').addEventListener('load', function(){
+    var svgContainer = document.getElementById('svg-container');
+    svgContainer.addEventListener('load', function(){
       // Will get called after embed element was loaded
-      svgPanZoom(document.getElementById('svg-container'));
-    })
+      svgPanZoom(svgContainer);
+    });
+
+    var graphSelector = document.getElementById('graph-selector');
+
+    graphSelector.addEventListener('input', function() {
+      svgContainer.setAttribute("src", "/static/images/" + graphSelector.value);
+    });
   </script>
   
 

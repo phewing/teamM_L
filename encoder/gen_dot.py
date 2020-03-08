@@ -15,7 +15,7 @@ def declare_male_node(id):
 
 
 def generate_shape_text_from_person(person: Person) -> str:
-    return f""""{person.relationship_to_self}" [shape={"oval" if person.sex == Gender.FEMALE else "box"}, regular=1, color="{"pink" if person.sex == Gender.FEMALE else "blue"}"];"""
+    return f""""{person.relationship_to_self}" [shape={"oval" if person.sex == Gender.FEMALE else "box"}, style=filled, regular=1, color="{"pink" if person.sex == Gender.FEMALE else "cornflowerblue"}"];"""
 
 
 def generate_points_text_from_male(person: Person) -> str:

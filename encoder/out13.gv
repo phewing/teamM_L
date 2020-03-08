@@ -1,16 +1,16 @@
 
 graph f13 {
-"Self" [shape=box, regular=1, color="blue"];
-"Mother" [shape=oval, regular=1, color="pink"];
-"Mother Sibling" [shape=oval, regular=1, color="pink"];
-"Mother Sibling Mate" [shape=box, regular=1, color="blue"];
-"Maternal Grandfather" [shape=box, regular=1, color="blue"];
-"Maternal Grandmother" [shape=oval, regular=1, color="pink"];
-"Father" [shape=box, regular=1, color="blue"];
-"Father Sibling" [shape=box, regular=1, color="blue"];
-"Father Sibling Mate" [shape=oval, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, regular=1, color="blue"];
-"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
+"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother" [shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling" [shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
+"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Mate" [shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
 
 "mothersiblingmate+mothersibling" [shape=point];
 "maternalgrandfather+maternalgrandmother" [shape=point];

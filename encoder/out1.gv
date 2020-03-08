@@ -1,14 +1,14 @@
 
 graph f1 {
-"Self" [shape=box, regular=1, color="blue"];
-"Mate" [shape=oval, regular=1, color="pink"];
-"Child" [shape=oval, regular=1, color="pink"];
-"Sibling 1" [shape=box, regular=1, color="blue"];
-"Sibling 2" [shape=oval, regular=1, color="pink"];
-"Mother" [shape=oval, regular=1, color="pink"];
-"Father" [shape=box, regular=1, color="blue"];
-"Mate's Mother" [shape=oval, regular=1, color="pink"];
-"Mate's Father" [shape=box, regular=1, color="blue"];
+"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate" [shape=oval, style=filled, regular=1, color="pink"];
+"Child" [shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
+"Mother" [shape=oval, style=filled, regular=1, color="pink"];
+"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate's Mother" [shape=oval, style=filled, regular=1, color="pink"];
+"Mate's Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "self+mate" [shape=point];
 "father+mother" [shape=point];

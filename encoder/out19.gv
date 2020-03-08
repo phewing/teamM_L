@@ -1,12 +1,12 @@
 
 graph f19 {
-"Self" [shape=oval, regular=1, color="pink"];
-"Sibling" [shape=box, regular=1, color="blue"];
-"Mother" [shape=oval, regular=1, color="pink"];
-"Father" [shape=box, regular=1, color="blue"];
-"Father Sibling" [shape=oval, regular=1, color="pink"];
-"Paternal Grandmother" [shape=oval, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, regular=1, color="blue"];
+"Self" [shape=oval, style=filled, regular=1, color="pink"];
+"Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother" [shape=oval, style=filled, regular=1, color="pink"];
+"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling" [shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "father+mother" [shape=point];
 "paternalgrandfather+paternalgrandmother" [shape=point];
