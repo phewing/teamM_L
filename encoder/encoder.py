@@ -362,7 +362,7 @@ if __name__ == "__main__":
             if not did_pop_person:
                 raise Exception("Unable to processes any more people.")
 
-    encodings = [person.to_encodable_dict() for person in people.values()]
+    encodings = {person.uuid: person.to_encodable_dict() for person in people.values()}
 
     with open("output.json", "w") as f:
         f.write(json.dumps(encodings))
