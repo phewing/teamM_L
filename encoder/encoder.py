@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import math
 from uuid import uuid4
-from typing import Optional, List, Dict
+from typing import Optional, List, Dict, Tuple
 
 import pandas
 from numpy.core.multiarray import ndarray
@@ -263,7 +263,7 @@ def ndarray_to_person(file_number: int, id_number: str, val: ndarray) -> Person:
     )
 
 
-if __name__ == "__main__":
+def get_roots_and_people() -> Tuple[Dict[str, str], Dict[str, Person]]:
     people: Dict[str, Person] = {}
 
     file_names = [
@@ -302,7 +302,7 @@ if __name__ == "__main__":
             person = ndarray_to_person(i + 1, uuid, value)
 
             if person.is_root:
-                roots[str(i+1)] = person.uuid
+                roots[str(i + 1)] = person.uuid
 
             people[uuid] = person
             people_needing_processed.append(people[uuid])
@@ -353,9 +353,11 @@ if __name__ == "__main__":
                             current_node = current_node.mother
                         elif step.direction == StepDirection.MATE and current_node.mate is not None:
                             current_node = current_node.mate
-                        elif step.direction == StepDirection.SIBLING and current_node.siblings[step.index - 1] is not None:
+                        elif step.direction == StepDirection.SIBLING and current_node.siblings[
+                            step.index - 1] is not None:
                             current_node = current_node.siblings[step.index - 1]
-                        elif step.direction == StepDirection.CHILD and current_node.children[step.index - 1] is not None:
+                        elif step.direction == StepDirection.CHILD and current_node.children[
+                            step.index - 1] is not None:
                             current_node = current_node.children[step.index - 1]
 
                 if not did_connect_node:
@@ -367,6 +369,12 @@ if __name__ == "__main__":
 
             if not did_pop_person:
                 raise Exception("Unable to processes any more people.")
+
+    return roots, people
+
+
+if __name__ == "__main__":
+    roots, people = get_roots_and_people()
 
     encodings = {person.uuid: person.to_encodable_dict() for person in people.values()}
 
