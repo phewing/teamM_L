@@ -1,22 +1,28 @@
 
 graph f19 {
-"Self" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self\nEpilepsy" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling\nHypertension" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandmother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather\nHypercholesterolemia" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "father+mother" [shape=point];
 "paternalgrandfather+paternalgrandmother" [shape=point];
 
 "Father" -- "father+mother" -- "Mother";
-"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Paternal Grandfather\nHypercholesterolemia" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
 
-"father+mother" -- "Self";
+"father+mother" -- "Self\nEpilepsy";
 "father+mother" -- "Sibling";
 "paternalgrandfather+paternalgrandmother" -- "Father";
-"paternalgrandfather+paternalgrandmother" -- "Father Sibling";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling\nHypertension";
+
+{rank=same; "Paternal Grandmother" "Paternal Grandfather\nHypercholesterolemia"}
+{rank=same; "Mother" "Father" "Father Sibling\nHypertension"}
+{rank=same; "Self\nEpilepsy" "Sibling"}
 }
     

@@ -1,34 +1,36 @@
 
 graph f14 {
-"Self" [shape=oval, style=filled, regular=1, color="pink"];
-"Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Child Identical Twin 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Child Identical Twin 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 2 Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2 Child 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 2 Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Father Sibling Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling Child 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling Child 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 1 Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1 Child 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 1 Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 1 Child 3" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 2 Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 2 Child 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 2 Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 2 Child 3" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Child Identical Twin 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Child Identical Twin 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 2 Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2 Child 1\nDown Syndrome" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 2 Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father\nHigh Cholesterol" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father Sibling Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Child 1\nAutism" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Child 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandmother\nAlzheimer's Disease" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather\nHeart Disease" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother\nMigranes" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 1 Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1 Child 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 1 Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 1 Child 3" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 2 Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 2 Child 1\nSeizures" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 2 Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 2 Child 3" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandmother\nStroke" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandfather" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "mate+self" [shape=point];
 "sibling2mate+sibling2" [shape=point];
@@ -41,32 +43,37 @@ graph f14 {
 
 "Mate" -- "mate+self" -- "Self";
 "Sibling 2 Mate" -- "sibling2mate+sibling2" -- "Sibling 2";
-"Father" -- "father+mother" -- "Mother";
+"Father\nHigh Cholesterol" -- "father+mother" -- "Mother\nMigranes";
 "Father Sibling Mate" -- "fathersiblingmate+fathersibling" -- "Father Sibling";
-"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Paternal Grandfather\nHeart Disease" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother\nAlzheimer's Disease";
 "Mother Sibling 1" -- "mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Mate";
 "Mother Sibling 2 Mate" -- "mothersibling2mate+mothersibling2" -- "Mother Sibling 2";
-"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother\nStroke";
 
 "father+mother" -- "Self";
 "mate+self" -- "Child Identical Twin 1";
 "mate+self" -- "Child Identical Twin 2";
 "father+mother" -- "Sibling 1";
 "father+mother" -- "Sibling 2";
-"sibling2mate+sibling2" -- "Sibling 2 Child 1";
+"sibling2mate+sibling2" -- "Sibling 2 Child 1\nDown Syndrome";
 "sibling2mate+sibling2" -- "Sibling 2 Child 2";
-"paternalgrandfather+paternalgrandmother" -- "Father";
+"paternalgrandfather+paternalgrandmother" -- "Father\nHigh Cholesterol";
 "paternalgrandfather+paternalgrandmother" -- "Father Sibling";
-"fathersiblingmate+fathersibling" -- "Father Sibling Child 1";
+"fathersiblingmate+fathersibling" -- "Father Sibling Child 1\nAutism";
 "fathersiblingmate+fathersibling" -- "Father Sibling Child 2";
-"maternalgrandfather+maternalgrandmother" -- "Mother";
+"maternalgrandfather+maternalgrandmother" -- "Mother\nMigranes";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
 "mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Child 1";
 "mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Child 2";
 "mothersibling1+mothersibling1mate" -- "Mother Sibling 1 Child 3";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
-"mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 1";
+"mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 1\nSeizures";
 "mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 2";
 "mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child 3";
+
+{rank=same; "Paternal Grandmother\nAlzheimer's Disease" "Paternal Grandfather\nHeart Disease" "Maternal Grandmother\nStroke" "Maternal Grandfather"}
+{rank=same; "Father\nHigh Cholesterol" "Father Sibling" "Father Sibling Mate" "Mother\nMigranes" "Mother Sibling 1" "Mother Sibling 1 Mate" "Mother Sibling 2" "Mother Sibling 2 Mate"}
+{rank=same; "Self" "Mate" "Sibling 1" "Sibling 2" "Sibling 2 Mate" "Father Sibling Child 1\nAutism" "Father Sibling Child 2" "Mother Sibling 1 Child 1" "Mother Sibling 1 Child 2" "Mother Sibling 1 Child 3" "Mother Sibling 2 Child 1\nSeizures" "Mother Sibling 2 Child 2" "Mother Sibling 2 Child 3"}
+{rank=same; "Child Identical Twin 1" "Child Identical Twin 2" "Sibling 2 Child 1\nDown Syndrome" "Sibling 2 Child 2"}
 }
     

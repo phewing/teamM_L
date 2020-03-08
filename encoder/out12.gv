@@ -1,29 +1,35 @@
 
 graph f12 {
-"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Mate Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mate Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2 Child 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 2 Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
+ordering=out;
+
+"Self" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mate Mother\nRheumatoid Arthritis" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mate Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2 Child 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 2 Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father\nType 2 Diabetes" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
 
 "self+mate" [shape=point];
 "matefather+matemother" [shape=point];
 "father+mother" [shape=point];
 
 "Self" -- "self+mate" -- "Mate";
-"Mate Father" -- "matefather+matemother" -- "Mate Mother";
-"Father" -- "father+mother" -- "Mother";
+"Mate Father" -- "matefather+matemother" -- "Mate Mother\nRheumatoid Arthritis";
+"Father\nType 2 Diabetes" -- "father+mother" -- "Mother";
 
 "father+mother" -- "Self";
 "matefather+matemother" -- "Mate";
 "self+mate" -- "Child";
 "father+mother" -- "Sibling 1";
 "father+mother" -- "Sibling 2";
+
+{rank=same; "Mate Mother\nRheumatoid Arthritis" "Mate Father" "Father\nType 2 Diabetes" "Mother"}
+{rank=same; "Self" "Mate" "Sibling 1" "Sibling 2"}
+{rank=same; "Child" "Sibling 2 Child 1" "Sibling 2 Child 2"}
 }
     

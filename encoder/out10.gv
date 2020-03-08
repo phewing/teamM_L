@@ -1,23 +1,25 @@
 
 graph f10 {
-"Self" [shape=oval, style=filled, regular=1, color="pink"];
-"Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Father Sibling Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 3" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling Child\nCystic Fibrosis" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father Sibling Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandmother\nEmphysema" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 2\nBreast Cancer" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 3" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandmother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandfather\nLung Cancer" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "mate+self" [shape=point];
 "siblingmate+sibling" [shape=point];
@@ -30,19 +32,24 @@ graph f10 {
 "Sibling Mate" -- "siblingmate+sibling" -- "Sibling";
 "Father" -- "father+mother" -- "Mother";
 "Father Sibling" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate";
-"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
-"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother\nEmphysema";
+"Maternal Grandfather\nLung Cancer" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
 
 "father+mother" -- "Self";
 "mate+self" -- "Child";
 "father+mother" -- "Sibling";
-"siblingmate+sibling" -- "Sibling Child";
+"siblingmate+sibling" -- "Sibling Child\nCystic Fibrosis";
 "paternalgrandfather+paternalgrandmother" -- "Father";
 "paternalgrandfather+paternalgrandmother" -- "Father Sibling";
 "fathersibling+fathersiblingmate" -- "Father Sibling Child";
 "maternalgrandfather+maternalgrandmother" -- "Mother";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
-"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2\nBreast Cancer";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 3";
+
+{rank=same; "Paternal Grandmother\nEmphysema" "Paternal Grandfather" "Maternal Grandmother" "Maternal Grandfather\nLung Cancer"}
+{rank=same; "Father" "Father Sibling" "Father Sibling Mate" "Mother" "Mother Sibling 1" "Mother Sibling 2\nBreast Cancer" "Mother Sibling 3"}
+{rank=same; "Self" "Mate" "Sibling" "Sibling Mate" "Father Sibling Child"}
+{rank=same; "Child" "Sibling Child\nCystic Fibrosis"}
 }
     

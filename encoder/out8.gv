@@ -1,24 +1,26 @@
 
 graph f8 {
-"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Child 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling Child 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling Child 3" [shape=oval, style=filled, regular=1, color="pink"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 2 Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 2 Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
+ordering=out;
+
+"Self\nHypertension" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Child 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling Child 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling Child 3" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandfather" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandmother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother\nAlzheimer's Disease" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1\nHeart Disease" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 2 Mate\nParkinson's Disease" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 2 Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandfather\nCancer" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandmother\nCancer" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
 
 "self+mate" [shape=point];
 "siblingmate+sibling" [shape=point];
@@ -27,14 +29,14 @@ graph f8 {
 "mothersibling2mate+mothersibling2" [shape=point];
 "maternalgrandfather+maternalgrandmother" [shape=point];
 
-"Self" -- "self+mate" -- "Mate";
+"Self\nHypertension" -- "self+mate" -- "Mate";
 "Sibling Mate" -- "siblingmate+sibling" -- "Sibling";
-"Father" -- "father+mother" -- "Mother";
+"Father" -- "father+mother" -- "Mother\nAlzheimer's Disease";
 "Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
-"Mother Sibling 2 Mate" -- "mothersibling2mate+mothersibling2" -- "Mother Sibling 2";
-"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Mother Sibling 2 Mate\nParkinson's Disease" -- "mothersibling2mate+mothersibling2" -- "Mother Sibling 2";
+"Maternal Grandfather\nCancer" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother\nCancer";
 
-"father+mother" -- "Self";
+"father+mother" -- "Self\nHypertension";
 "self+mate" -- "Child 1";
 "self+mate" -- "Child 2";
 "father+mother" -- "Sibling";
@@ -42,9 +44,14 @@ graph f8 {
 "siblingmate+sibling" -- "Sibling Child 2";
 "siblingmate+sibling" -- "Sibling Child 3";
 "paternalgrandfather+paternalgrandmother" -- "Father";
-"maternalgrandfather+maternalgrandmother" -- "Mother";
-"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
+"maternalgrandfather+maternalgrandmother" -- "Mother\nAlzheimer's Disease";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1\nHeart Disease";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
 "mothersibling2mate+mothersibling2" -- "Mother Sibling 2 Child";
+
+{rank=same; "Paternal Grandfather" "Paternal Grandmother" "Maternal Grandfather\nCancer" "Maternal Grandmother\nCancer"}
+{rank=same; "Father" "Mother\nAlzheimer's Disease" "Mother Sibling 1\nHeart Disease" "Mother Sibling 2" "Mother Sibling 2 Mate\nParkinson's Disease"}
+{rank=same; "Self\nHypertension" "Mate" "Sibling" "Sibling Mate" "Mother Sibling 2 Child"}
+{rank=same; "Child 1" "Child 2" "Sibling Child 1" "Sibling Child 2" "Sibling Child 3"}
 }
     

@@ -1,30 +1,32 @@
 
 graph f7 {
-"Self Twin" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling Twin" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandfather Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandfather Sibling 1 Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather Sibling 1 Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather Sibling 1 Child Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandfather Sibling 1 Child Child" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandfather Sibling 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandfather Sibling 2 Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather Sibling 2 Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather Sibling 2 Child Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1 Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother Sibling 1 Child 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1 Child 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 2 Identical Twin" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 3 Identical Twin" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandmother Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self Twin" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling Twin" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandmother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandfather Sibling 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandfather Sibling 1 Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather Sibling 1 Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather Sibling 1 Child Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandfather Sibling 1 Child Child\nSIDS" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandfather Sibling 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandfather Sibling 2 Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather Sibling 2 Child\nLupus" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather Sibling 2 Child Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1 Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother Sibling 1 Child 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1 Child 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 2 Identical Twin" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 3 Identical Twin\nHTN" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandmother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandmother Sibling" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandfather\nAccident" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "father+mother" [shape=point];
 "paternalgrandfather+paternalgrandmother" [shape=point];
@@ -40,20 +42,24 @@ graph f7 {
 "Paternal Grandfather Sibling 1 Child Mate" -- "paternalgrandfathersibling1childmate+paternalgrandfathersibling1child" -- "Paternal Grandfather Sibling 1 Child";
 "Paternal Grandfather Sibling 2" -- "paternalgrandfathersibling2+paternalgrandfathersibling2mate" -- "Paternal Grandfather Sibling 2 Mate";
 "Mother Sibling 1 Mate" -- "mothersibling1mate+mothersibling1" -- "Mother Sibling 1";
-"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Maternal Grandfather\nAccident" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
 
 "father+mother" -- "Self Twin";
 "father+mother" -- "Sibling Twin";
 "father+mother" -- "Sibling 2";
 "paternalgrandfather+paternalgrandmother" -- "Father";
 "paternalgrandfathersibling1+paternalgrandfathersibling1mate" -- "Paternal Grandfather Sibling 1 Child";
-"paternalgrandfathersibling1childmate+paternalgrandfathersibling1child" -- "Paternal Grandfather Sibling 1 Child Child";
-"paternalgrandfathersibling2+paternalgrandfathersibling2mate" -- "Paternal Grandfather Sibling 2 Child";
+"paternalgrandfathersibling1childmate+paternalgrandfathersibling1child" -- "Paternal Grandfather Sibling 1 Child Child\nSIDS";
+"paternalgrandfathersibling2+paternalgrandfathersibling2mate" -- "Paternal Grandfather Sibling 2 Child\nLupus";
 "maternalgrandfather+maternalgrandmother" -- "Mother";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
 "mothersibling1mate+mothersibling1" -- "Mother Sibling 1 Child 1";
 "mothersibling1mate+mothersibling1" -- "Mother Sibling 1 Child 2";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2 Identical Twin";
-"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 3 Identical Twin";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 3 Identical Twin\nHTN";
+
+{rank=same; "Paternal Grandmother" "Paternal Grandfather" "Paternal Grandfather Sibling 1" "Paternal Grandfather Sibling 1 Mate" "Paternal Grandfather Sibling 2" "Paternal Grandfather Sibling 2 Mate" "Maternal Grandmother" "Maternal Grandmother Sibling" "Maternal Grandfather\nAccident"}
+{rank=same; "Father" "Paternal Grandfather Sibling 1 Child" "Paternal Grandfather Sibling 1 Child Mate" "Paternal Grandfather Sibling 2 Child\nLupus" "Mother" "Mother Sibling 1" "Mother Sibling 1 Mate" "Mother Sibling 2 Identical Twin" "Mother Sibling 3 Identical Twin\nHTN"}
+{rank=same; "Self Twin" "Sibling Twin" "Sibling 2" "Paternal Grandfather Sibling 1 Child Child\nSIDS" "Paternal Grandfather Sibling 2 Child Child" "Mother Sibling 1 Child 1" "Mother Sibling 1 Child 2"}
 }
     

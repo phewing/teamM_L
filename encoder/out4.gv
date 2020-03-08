@@ -1,15 +1,17 @@
 
 graph f4 {
-"Self" [shape=oval, style=filled, regular=1, color="pink"];
-"Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother\nMelanoma" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling\nDementia" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Mate\nUterine Cancer" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandmother\nCancer" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather\nHeart Attack" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "mate+self" [shape=point];
 "father+mother" [shape=point];
@@ -17,14 +19,19 @@ graph f4 {
 "paternalgrandfather+paternalgrandmother" [shape=point];
 
 "Mate" -- "mate+self" -- "Self";
-"Father" -- "father+mother" -- "Mother";
-"Father Sibling" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate";
-"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Father" -- "father+mother" -- "Mother\nMelanoma";
+"Father Sibling\nDementia" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate\nUterine Cancer";
+"Paternal Grandfather\nHeart Attack" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother\nCancer";
 
 "father+mother" -- "Self";
 "mate+self" -- "Child";
 "father+mother" -- "Sibling";
 "paternalgrandfather+paternalgrandmother" -- "Father";
-"paternalgrandfather+paternalgrandmother" -- "Father Sibling";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling\nDementia";
+
+{rank=same; "Paternal Grandmother\nCancer" "Paternal Grandfather\nHeart Attack"}
+{rank=same; "Mother\nMelanoma" "Father" "Father Sibling\nDementia" "Father Sibling Mate\nUterine Cancer"}
+{rank=same; "Self" "Mate" "Sibling"}
+{rank=same; "Child"}
 }
     

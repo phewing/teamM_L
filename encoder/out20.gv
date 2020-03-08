@@ -1,27 +1,29 @@
 
 graph f20 {
-"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 1 Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 1 Child" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 2 Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2 Child 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 2 Child 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling 1" [shape=oval, style=filled, regular=1, color="pink"];
-"Father Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Father Sibling 2 Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling 2 Child 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling 2 Child 2" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self\nHypercholesterolemia" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 1 Mate\nAsthma" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 1 Child" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 2 Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2 Child 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 2 Child 2\nTay Sachs Disease" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother\nHeart Disease" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 1\nCar Accident" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandmother\nHeart Disease" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Maternal Grandfather\nParkinson's Disease" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father\nHypercholesterolemia" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling 1" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father Sibling 2\nLung Cancer" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father Sibling 2 Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling 2 Child 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling 2 Child 2" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandmother\nFemale Cancer" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather\nDementia" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "self+mate" [shape=point];
 "sibling1+sibling1mate" [shape=point];
@@ -31,27 +33,32 @@ graph f20 {
 "fathersibling2mate+fathersibling2" [shape=point];
 "paternalgrandfather+paternalgrandmother" [shape=point];
 
-"Self" -- "self+mate" -- "Mate";
-"Sibling 1" -- "sibling1+sibling1mate" -- "Sibling 1 Mate";
+"Self\nHypercholesterolemia" -- "self+mate" -- "Mate";
+"Sibling 1" -- "sibling1+sibling1mate" -- "Sibling 1 Mate\nAsthma";
 "Sibling 2 Mate" -- "sibling2mate+sibling2" -- "Sibling 2";
-"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
-"Father" -- "father+mother" -- "Mother";
-"Father Sibling 2 Mate" -- "fathersibling2mate+fathersibling2" -- "Father Sibling 2";
-"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Maternal Grandfather\nParkinson's Disease" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother\nHeart Disease";
+"Father\nHypercholesterolemia" -- "father+mother" -- "Mother\nHeart Disease";
+"Father Sibling 2 Mate" -- "fathersibling2mate+fathersibling2" -- "Father Sibling 2\nLung Cancer";
+"Paternal Grandfather\nDementia" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother\nFemale Cancer";
 
-"father+mother" -- "Self";
+"father+mother" -- "Self\nHypercholesterolemia";
 "father+mother" -- "Sibling 1";
 "sibling1+sibling1mate" -- "Sibling 1 Child";
 "father+mother" -- "Sibling 2";
 "sibling2mate+sibling2" -- "Sibling 2 Child 1";
-"sibling2mate+sibling2" -- "Sibling 2 Child 2";
-"maternalgrandfather+maternalgrandmother" -- "Mother";
-"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1";
+"sibling2mate+sibling2" -- "Sibling 2 Child 2\nTay Sachs Disease";
+"maternalgrandfather+maternalgrandmother" -- "Mother\nHeart Disease";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling 1\nCar Accident";
 "maternalgrandfather+maternalgrandmother" -- "Mother Sibling 2";
-"paternalgrandfather+paternalgrandmother" -- "Father";
+"paternalgrandfather+paternalgrandmother" -- "Father\nHypercholesterolemia";
 "paternalgrandfather+paternalgrandmother" -- "Father Sibling 1";
-"paternalgrandfather+paternalgrandmother" -- "Father Sibling 2";
+"paternalgrandfather+paternalgrandmother" -- "Father Sibling 2\nLung Cancer";
 "fathersibling2mate+fathersibling2" -- "Father Sibling 2 Child 1";
 "fathersibling2mate+fathersibling2" -- "Father Sibling 2 Child 2";
+
+{rank=same; "Maternal Grandmother\nHeart Disease" "Maternal Grandfather\nParkinson's Disease" "Paternal Grandmother\nFemale Cancer" "Paternal Grandfather\nDementia"}
+{rank=same; "Mother\nHeart Disease" "Mother Sibling 1\nCar Accident" "Mother Sibling 2" "Father\nHypercholesterolemia" "Father Sibling 1" "Father Sibling 2\nLung Cancer" "Father Sibling 2 Mate"}
+{rank=same; "Self\nHypercholesterolemia" "Mate" "Sibling 1" "Sibling 1 Mate\nAsthma" "Sibling 2" "Sibling 2 Mate" "Father Sibling 2 Child 1" "Father Sibling 2 Child 2"}
+{rank=same; "Sibling 1 Child" "Sibling 2 Child 1" "Sibling 2 Child 2\nTay Sachs Disease"}
 }
     

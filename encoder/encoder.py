@@ -32,8 +32,10 @@ class Person(object):
     path: StepSequence
     sex: Gender
     is_living: bool
+    label: str
     generation: int
     disease: Optional[Disease]
+    disease_original: Optional[str]
     age_onset: Optional[int]
     age_death: Optional[int]
     mother: Optional[Person]
@@ -51,6 +53,7 @@ class Person(object):
                  sex: Gender,
                  is_living: bool,
                  disease: Optional[Disease],
+                 disease_original: Optional[Disease],
                  age_onset: Optional[int],
                  age_death: Optional[int]
                  ):
@@ -63,6 +66,8 @@ class Person(object):
         self.sex = sex
         self.is_living = is_living
         self.disease = disease
+        self.disease_original = disease_original
+        self.label = self.relationship_to_self + ("\\n" + self.disease_original if self.disease_original else "")
         self.age_onset = age_onset
         self.age_death = age_death
         self.father = None
@@ -348,6 +353,7 @@ def ndarray_to_person(file_number: int, id_number: str, val: ndarray) -> Person:
         sex,
         is_living,
         disease,
+        disease_original if type(disease_original) == str else None,
         age_of_onset,
         age_of_death
     )

@@ -1,14 +1,16 @@
 
 graph f1 {
-"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Child" [shape=oval, style=filled, regular=1, color="pink"];
-"Sibling 1" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Sibling 2" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mate's Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mate's Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
+ordering=out;
+
+"Self" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Child" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Sibling 1" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Sibling 2" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mate's Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mate's Father\nHeart Attack" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
 
 "self+mate" [shape=point];
 "father+mother" [shape=point];
@@ -16,12 +18,16 @@ graph f1 {
 
 "Self" -- "self+mate" -- "Mate";
 "Father" -- "father+mother" -- "Mother";
-"Mate's Father" -- "mate'sfather+mate'smother" -- "Mate's Mother";
+"Mate's Father\nHeart Attack" -- "mate'sfather+mate'smother" -- "Mate's Mother";
 
 "father+mother" -- "Self";
 "mate'sfather+mate'smother" -- "Mate";
 "self+mate" -- "Child";
 "father+mother" -- "Sibling 1";
 "father+mother" -- "Sibling 2";
+
+{rank=same; "Mother" "Father" "Mate's Mother" "Mate's Father\nHeart Attack"}
+{rank=same; "Self" "Mate" "Sibling 1" "Sibling 2"}
+{rank=same; "Child"}
 }
     

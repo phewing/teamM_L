@@ -15,7 +15,9 @@ def declare_male_node(id):
 
 
 def generate_shape_text_from_person(person: Person) -> str:
-    return f""""{person.relationship_to_self}" [shape={"oval" if person.sex == Gender.FEMALE else "box"}, style=filled, regular=1, color="{"pink" if person.sex == Gender.FEMALE else "cornflowerblue"}"];"""
+    # return f""""{person.relationship_to_self}" [shape={"oval" if person.sex == Gender.FEMALE else "box"}, style=filled, regular=1, color="{"pink" if person.sex == Gender.FEMALE else "cornflowerblue"}"];"""
+    j = "\\n"
+    return f""""{person.label}" [fontname="helvetica:bold", width=2, shape={"oval" if person.sex == Gender.FEMALE else "box"}, style=filled, regular=1, color="{"pink" if person.sex == Gender.FEMALE else "cornflowerblue"}"];"""
 
 
 def generate_points_text_from_male(person: Person) -> str:
@@ -23,11 +25,11 @@ def generate_points_text_from_male(person: Person) -> str:
 
 
 def generate_horizontal_lines_text_from_male(person: Person) -> str:
-    return f""""{person.relationship_to_self}" -- "{safe_uuid(person.relationship_to_self)}+{safe_uuid(person.mate.relationship_to_self)}" -- "{person.mate.relationship_to_self}";"""
+    return f""""{person.label}" -- "{safe_uuid(person.relationship_to_self)}+{safe_uuid(person.mate.relationship_to_self)}" -- "{person.mate.label}";"""
 
 
 def generate_line_from_parent_to_child(father: Person, child: Person) -> str:
-    return f""""{safe_uuid(father.relationship_to_self)}+{safe_uuid(father.mate.relationship_to_self)}" -- "{child.relationship_to_self}";"""
+    return f""""{safe_uuid(father.relationship_to_self)}+{safe_uuid(father.mate.relationship_to_self)}" -- "{child.label}";"""
 
 
 def generate_lines_from_parents_to_children(father: Person) -> str:
@@ -62,11 +64,19 @@ def write_dot(roots, people, tree_number: int, output_path: str):
         people_in_generation: List[Person] = list(filter(lambda person: person.generation == generation, people_in_tree))
         people_by_generation[str(generation)] = people_in_generation
 
-    for generation, people_in_generation in people_by_generation.items():
-        ...
+    ranks_text = []
+    for generation in range(maximum_generation, minimum_generation - 1, -1):
+        people_in_generation = people_by_generation[str(generation)]
+        j = " ".join([f'"{person.label}"' for person in people_in_generation])
+        rank_text = f"{{rank=same; {j}}}"
+        ranks_text.append(rank_text)
+
+    ranking_output = "\n".join(ranks_text)
 
     output = f"""
 graph f{tree_number} {{
+ordering=out;
+
 {shapes_output}
 
 {points_output}
@@ -74,6 +84,8 @@ graph f{tree_number} {{
 {partner_line_output}
 
 {parent_to_child_lines_output}
+
+{ranking_output}
 }}
     """
 

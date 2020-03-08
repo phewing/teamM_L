@@ -1,16 +1,18 @@
 
 graph f13 {
-"Self" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Mother" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling" [shape=oval, style=filled, regular=1, color="pink"];
-"Mother Sibling Mate" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Maternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Maternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
-"Father" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Father Sibling Mate" [shape=oval, style=filled, regular=1, color="pink"];
-"Paternal Grandfather" [shape=box, style=filled, regular=1, color="cornflowerblue"];
-"Paternal Grandmother" [shape=oval, style=filled, regular=1, color="pink"];
+ordering=out;
+
+"Self\nSeizures" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Mother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling\nFibromyalgia" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Mother Sibling Mate" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandfather" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Maternal Grandmother\nGout" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Father" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Father Sibling Mate" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
+"Paternal Grandfather\nSuicide" [fontname="helvetica:bold", width=2, shape=box, style=filled, regular=1, color="cornflowerblue"];
+"Paternal Grandmother" [fontname="helvetica:bold", width=2, shape=oval, style=filled, regular=1, color="pink"];
 
 "mothersiblingmate+mothersibling" [shape=point];
 "maternalgrandfather+maternalgrandmother" [shape=point];
@@ -18,16 +20,20 @@ graph f13 {
 "fathersibling+fathersiblingmate" [shape=point];
 "paternalgrandfather+paternalgrandmother" [shape=point];
 
-"Mother Sibling Mate" -- "mothersiblingmate+mothersibling" -- "Mother Sibling";
-"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother";
+"Mother Sibling Mate" -- "mothersiblingmate+mothersibling" -- "Mother Sibling\nFibromyalgia";
+"Maternal Grandfather" -- "maternalgrandfather+maternalgrandmother" -- "Maternal Grandmother\nGout";
 "Father" -- "father+mother" -- "Mother";
 "Father Sibling" -- "fathersibling+fathersiblingmate" -- "Father Sibling Mate";
-"Paternal Grandfather" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
+"Paternal Grandfather\nSuicide" -- "paternalgrandfather+paternalgrandmother" -- "Paternal Grandmother";
 
-"father+mother" -- "Self";
+"father+mother" -- "Self\nSeizures";
 "maternalgrandfather+maternalgrandmother" -- "Mother";
-"maternalgrandfather+maternalgrandmother" -- "Mother Sibling";
+"maternalgrandfather+maternalgrandmother" -- "Mother Sibling\nFibromyalgia";
 "paternalgrandfather+paternalgrandmother" -- "Father";
 "paternalgrandfather+paternalgrandmother" -- "Father Sibling";
+
+{rank=same; "Maternal Grandfather" "Maternal Grandmother\nGout" "Paternal Grandfather\nSuicide" "Paternal Grandmother"}
+{rank=same; "Mother" "Mother Sibling\nFibromyalgia" "Mother Sibling Mate" "Father" "Father Sibling" "Father Sibling Mate"}
+{rank=same; "Self\nSeizures"}
 }
     
