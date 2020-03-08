@@ -6,7 +6,7 @@ from typing import List
 
 
 pattern = re.compile(r"((?:self)|(?:(?:identical )?twin)|(?:sibling(?: \d+)?)|(?:\bfather\b)|(?:grandmother)|"
-                     r"(?:grandfather)|(?:paternal)|(?:\bmate\b)|(?:child(?: \d+)?)|(?:mother)|(?:maternal))+",
+                     r"(?:grandfather)|(?:paternal)|(?:\bmate\b(?: \d+)?)|(?:child(?: \d+)?)|(?:mother)|(?:maternal))+",
                      re.IGNORECASE)
 
 
@@ -26,15 +26,26 @@ class Step(object):
         self.direction = direction
         self.index = index
 
+        if index is None and direction == StepDirection.SIBLING or direction == StepDirection.CHILD:
+            self.index = 1
+
+    def __str__(self):
+        return f"{self.direction} {self.index}"
+
     def __eq__(self, other: Step) -> bool:
         return self.direction == other.direction and self.index == other.index
 
 
 class StepSequence(object):
-    items: List[Step] = []
+    items: List[Step]
 
-    def __init__(self, items: List[Step]=[]):
+    def __init__(self, items: List[Step]=None):
+        if items is None:
+            items = []
         self.items = items
+
+    def __str__(self):
+        return ", ".join([str(item) for item in self.items])
 
     def add_item(self, item: Step):
         self.items.append(item)
@@ -63,7 +74,7 @@ def parse_relationship_text(txt: str) -> StepSequence:
 
         spl = front.split(" ")
 
-        if len(spl) == 1:
+        if len(spl) == 1 or front == "identical twin":
             # With no index
             if front == "self":
                 pass
@@ -90,6 +101,8 @@ def parse_relationship_text(txt: str) -> StepSequence:
                 sequence.add_item(Step(StepDirection.SIBLING, index))
             elif front == "child":
                 sequence.add_item(Step(StepDirection.CHILD, index))
+            elif front == "mate":
+                sequence.add_item(Step(StepDirection.MATE, index))
             else:
                 raise ValueError(front)
         else:

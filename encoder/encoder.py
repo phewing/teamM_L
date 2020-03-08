@@ -1,18 +1,23 @@
 from __future__ import annotations
 
+import json
 import math
-from typing import Optional, List
+from uuid import uuid4
+from typing import Optional, List, Dict
 
+import pandas
 from numpy.core.multiarray import ndarray
 
 from enums import *
-
-import pandas
+from parsers import StepSequence, parse_relationship_text, StepDirection
 
 
 class Person(object):
     file_number: int
+    uuid: str
     is_root: bool
+    relationship_to_self: str
+    path: StepSequence
     sex: Gender
     is_living: bool
     disease: Optional[Disease]
@@ -22,26 +27,35 @@ class Person(object):
     father: Optional[Person]
     siblings: List[Person]
     children: List[Person]
+    mate: Optional[Person]
     twin: Optional[Person]
 
     def __init__(self,
                  file_number: int,
-                 is_root: bool,
+                 uuid: str,
+                 relationship_to_self: str,
                  sex: Gender,
                  is_living: bool,
                  disease: Optional[Disease],
                  age_onset: Optional[int],
-                 age_death: Optional[int],
-                 twin: Optional[Person]
+                 age_death: Optional[int]
                  ):
         self.file_number = file_number
-        self.is_root = is_root
+        self.uuid = uuid
+        self.relationship_to_self = relationship_to_self
+        self.path = parse_relationship_text(self.relationship_to_self)
+        self.is_root = len(self.path.items) == 0
         self.sex = sex
         self.is_living = is_living
         self.disease = disease
         self.age_onset = age_onset
         self.age_death = age_death
-        self.twin = twin
+        self.father = None
+        self.mother = None
+        self.mate = None
+        self.children = []
+        self.siblings = []
+        self.twin = None
 
     def __sub__(self, other: Person) -> float:
         return self.compare(other)
@@ -62,7 +76,7 @@ class Person(object):
             other.children.append(self)
 
     def add_sibling(self, other: Person):
-        self.siblings.append(self)
+        self.siblings.append(other)
         if self not in other.siblings:
             other.siblings.append(self)
 
@@ -73,16 +87,38 @@ class Person(object):
         else:
             other.mother = self
 
+    def set_mate(self, other: Person):
+        self.mate = other
+        other.mate = self
 
-def ndarray_to_person(file_number: int, val: ndarray) -> Person:
+    def to_encodable_dict(self):
+        return {
+            "age_death": self.age_death,
+            "age_onset": self.age_onset,
+            "children": [child.uuid for child in self.children],
+            "disease": self.disease,
+            "father": self.father.uuid if self.father else None,
+            "file_number": self.file_number,
+            "is_living": self.is_living,
+            "is_root": self.is_root,
+            "mate": self.mate.uuid if self.mate else None,
+            "mother": self.mother.uuid if self.mother else None,
+            # "path": str(self.path),
+            # "relationship_to_self": self.relationship_to_self,
+            "sex": "M" if self.sex == Gender.MALE else "F",
+            "siblings": [sibling.uuid for sibling in self.siblings],
+            "twin": self.twin.uuid if self.twin else None,
+            "uuid": self.uuid
+        }
+
+
+def ndarray_to_person(file_number: int, id_number: str, val: ndarray) -> Person:
     relation_original = val[0]  # self, mother, etc.
     sex_original = val[1]  # M, F
     is_living_original = val[2]  # Y, N
     disease_original = val[3]  # one of many diseases
     age_of_onset_original = val[4]
     age_of_death_original = val[5]
-
-    is_root = relation_original == "Self"
 
     if sex_original == "M":
         sex = Gender.MALE
@@ -217,7 +253,8 @@ def ndarray_to_person(file_number: int, val: ndarray) -> Person:
 
     return Person(
         file_number,
-        is_root,
+        id_number,
+        relation_original,
         sex,
         is_living,
         disease,
@@ -226,37 +263,106 @@ def ndarray_to_person(file_number: int, val: ndarray) -> Person:
     )
 
 
-people: List[Person] = []
+if __name__ == "__main__":
+    people: Dict[str, Person] = {}
 
+    file_names = [
+        "F1.txt",
+        "F2.txt",
+        "F3.txt",
+        "F4.txt",
+        "F5.txt",
+        "F6.txt",
+        "F7.txt",
+        "F8.txt",
+        "F9.txt",
+        "F10.txt",
+        "F11.txt",
+        "F12.txt",
+        "F13.txt",
+        "F14.txt",
+        "F15.txt",
+        "F16.txt",
+        "F17.txt",
+        "F18.txt",
+        "F19.txt",
+        "F20.txt"
+    ]
 
-file_names = [
-    "F1.txt",
-    "F2.txt",
-    "F3.txt",
-    "F4.txt",
-    "F5.txt",
-    "F6.txt",
-    "F7.txt",
-    "F8.txt",
-    "F9.txt",
-    "F10.txt",
-    "F11.txt",
-    "F12.txt",
-    "F13.txt",
-    "F14.txt",
-    "F15.txt",
-    "F16.txt",
-    "F17.txt",
-    "F18.txt",
-    "F19.txt",
-    "F20.txt"
-]
+    # Load in our data
+    for i, file_name in enumerate(file_names):
+        df = pandas.read_csv('../All in the Family/All in the Family/' + file_name, sep="\t")
 
+        people_needing_processed = []
 
-for i, file_name in enumerate(file_names):
-    df = pandas.read_csv('../All in the Family/All in the Family/' + file_name, sep="\t")
+        for j, value in enumerate(df.values):
+            uuid = str(uuid4())
+            person = ndarray_to_person(i + 1, uuid, value)
+            people[uuid] = person
+            people_needing_processed.append(people[uuid])
 
-    for value in df.values:
-        people.append(ndarray_to_person(i + 1, value))
+        root: Optional[Person] = None
 
-pass
+        while len(people_needing_processed):
+            did_pop_person = False
+
+            for k, person in enumerate(people_needing_processed):
+                if person.is_root:
+                    root = person
+                    people_needing_processed.pop(k)
+                    did_pop_person = True
+                    break
+
+                if root is None:
+                    continue
+
+                current_node: Person = root
+                did_connect_node = False
+                for j, step in enumerate(person.path.items):
+                    is_last_step = j == len(person.path.items) - 1
+
+                    if is_last_step:
+                        # If the attribute in the direction of our path is None and we are on the last step,
+                        # then we have reached the edge of our tree and should add the leaf.
+                        if step.direction == StepDirection.FATHER and current_node.father is None and is_last_step:
+                            current_node.set_father(person)
+                            did_connect_node = True
+                        elif step.direction == StepDirection.MOTHER and current_node.mother is None and is_last_step:
+                            current_node.set_mother(person)
+                            did_connect_node = True
+                        elif step.direction == StepDirection.SIBLING and person not in current_node.siblings and is_last_step:
+                            current_node.add_sibling(person)
+                            did_connect_node = True
+                        elif step.direction == StepDirection.CHILD and person not in current_node.children and is_last_step:
+                            current_node.add_child(person)
+                            did_connect_node = True
+                        elif step.direction == StepDirection.MATE and person.mate is None and is_last_step:
+                            current_node.set_mate(person)
+                            did_connect_node = True
+                    else:
+                        # Otherwise, we should traverse to the next step in our path
+                        if step.direction == StepDirection.FATHER and current_node.father is not None:
+                            current_node = current_node.father
+                        elif step.direction == StepDirection.MOTHER and current_node.mother is not None:
+                            current_node = current_node.mother
+                        elif step.direction == StepDirection.MATE and current_node.mate is not None:
+                            current_node = current_node.mate
+                        elif step.direction == StepDirection.SIBLING and current_node.siblings[step.index - 1] is not None:
+                            current_node = current_node.siblings[step.index - 1]
+                        elif step.direction == StepDirection.CHILD and current_node.children[step.index - 1] is not None:
+                            current_node = current_node.children[step.index - 1]
+
+                if not did_connect_node:
+                    continue
+                else:
+                    people_needing_processed.pop(k)
+                    did_pop_person = True
+                    break
+
+            if not did_pop_person:
+                raise Exception("Unable to processes any more people.")
+
+    encodings = [person.to_encodable_dict() for person in people.values()]
+
+    with open("output.json", "w") as f:
+        f.write(json.dumps(encodings))
