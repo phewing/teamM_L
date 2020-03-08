@@ -42,6 +42,7 @@ class Person(object):
     children: List[Person]
     mate: Optional[Person]
     twin: Optional[Person]
+    has_full_information: bool
 
     def __init__(self,
                  file_number: int,
@@ -70,40 +71,114 @@ class Person(object):
         self.children = []
         self.siblings = []
         self.twin = None
+        self.has_full_information = False
 
-    def __sub__(self, other: Person) -> float:
-        return self.compare(other)
+    def set_father(self, father: Person):
+        self.father = father
 
-    def compare(self, other: Person) -> float:
-        sex_difference = other.sex - self.sex
+        if self.mother:
+            self.mother.mate = father
+            self.father.mate = self.mother
+        if self not in father.children:
+            father.children.append(self)
 
-        return float(sex_difference)
+        for sibling in self.siblings:
+            sibling.father = father
+            if sibling not in father.children:
+                father.children.append(sibling)
 
-    def set_father(self, other: Person):
-        self.father = other
-        if self not in other.children:
-            other.children.append(self)
+    def set_mother(self, mother: Person):
+        self.mother = mother
 
-    def set_mother(self, other: Person):
-        self.mother = other
-        if self not in other.children:
-            other.children.append(self)
+        if self.father:
+            self.father.mate = mother
+            self.mother.mate = self.father
+        if self not in mother.children:
+            mother.children.append(self)
 
-    def add_sibling(self, other: Person):
-        self.siblings.append(other)
-        if self not in other.siblings:
-            other.siblings.append(self)
+        for sibling in self.siblings:
+            sibling.mother = mother
+            if sibling not in mother.children:
+                mother.children.append(sibling)
 
-    def add_child(self, other: Person):
-        self.children.append(other)
+    def add_sibling(self, sibling: Person):
+        self.siblings.append(sibling)
+        if self not in sibling.siblings:
+            sibling.siblings.append(self)
+
+        if self.father:
+            sibling.father = self.father
+        if self.mother:
+            sibling.mother = self.mother
+
+        for otherSibling in self.siblings:
+            if sibling != otherSibling and sibling not in otherSibling.siblings:
+                otherSibling.add_sibling(sibling)
+
+    def add_child(self, child: Person):
+        self.children.append(child)
         if self.sex == Gender.MALE:
-            other.father = self
+            child.father = self
         else:
-            other.mother = self
+            child.mother = self
+
+        if self.sex == Gender.MALE:
+            child.father = self
+
+            if self.mate and child not in self.mate.children:
+                self.mate.children.append(child)
+                child.mother = self.mate
+        else:
+            child.mother = self
+            if self.mate and child not in self.mate.children:
+                self.mate.children.append(child)
+                child.father = self.mate
 
     def set_mate(self, other: Person):
         self.mate = other
         other.mate = self
+        for child in self.children:
+            if child not in self.mate.children:
+                self.mate.children.append(child)
+        for child in self.mate.children:
+            if child not in self.children:
+                self.children.append(child)
+
+    def fill_in_surrounding(self):
+        # Basically, we know this node has all the information, so we want it to share it with surrounding nodes
+        self.father.children.append(self)
+        self.mother.children.append(self)
+        self.father.mate = self.mother
+        self.mother.mate = self.father
+        for sibling in self.siblings:
+            for otherSibling in self.siblings:
+                if sibling != otherSibling and otherSibling not in sibling.siblings:
+                    sibling.siblings.append(otherSibling)
+            sibling.father = self.father
+            if sibling not in self.father.children:
+                self.father.children.append(sibling)
+            sibling.mother = self.mother
+            if sibling not in self.mother.children:
+                self.mother.children.append(sibling)
+        for child in self.children:
+            for otherChild in self.children:
+                if child != otherChild and otherChild not in child.siblings:
+                    child.siblings.append(otherChild)
+            if self.sex == Gender.MALE:
+                child.father = self
+                child.mother = self.mate
+            else:
+                child.mother = self
+                child.father = self.mate
+
+        # Mark surrounding nodes as being complete
+        for child in self.children:
+            child.has_full_information = True
+        for sibling in self.siblings:
+            sibling.has_full_information = True
+        self.mother.has_full_information = True
+        self.father.has_full_information = True
+        self.mate.has_full_information = True
 
     def to_encodable_dict(self):
         return {
@@ -119,7 +194,7 @@ class Person(object):
             "mate": self.mate.uuid if self.mate else None,
             "mother": self.mother.uuid if self.mother else None,
             # "path": str(self.path),
-            # "relationship_to_self": self.relationship_to_self,
+            "relationship_to_self": self.relationship_to_self,
             "sex": "M" if self.sex == Gender.MALE else "F",
             "siblings": [sibling.uuid for sibling in self.siblings],
             "twin": self.twin.uuid if self.twin else None,
