@@ -12,6 +12,18 @@ from enums import *
 from parsers import StepSequence, parse_relationship_text, StepDirection
 
 
+def calculate_generation_from_path(path: StepSequence) -> int:
+    generation = 0
+
+    for step in path.items:
+        if step.direction in (StepDirection.FATHER, StepDirection.MOTHER, ):
+            generation += 1
+        if step.direction == StepDirection.CHILD:
+            generation -= 1
+
+    return generation
+
+
 class Person(object):
     file_number: int
     uuid: str
@@ -20,6 +32,7 @@ class Person(object):
     path: StepSequence
     sex: Gender
     is_living: bool
+    generation: int
     disease: Optional[Disease]
     age_onset: Optional[int]
     age_death: Optional[int]
@@ -44,6 +57,7 @@ class Person(object):
         self.uuid = uuid
         self.relationship_to_self = relationship_to_self
         self.path = parse_relationship_text(self.relationship_to_self)
+        self.generation = calculate_generation_from_path(self.path)
         self.is_root = len(self.path.items) == 0
         self.sex = sex
         self.is_living = is_living
@@ -99,6 +113,7 @@ class Person(object):
             "disease": self.disease,
             "father": self.father.uuid if self.father else None,
             "file_number": self.file_number,
+            "generation": self.generation,
             "is_living": self.is_living,
             "is_root": self.is_root,
             "mate": self.mate.uuid if self.mate else None,
