@@ -27,6 +27,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/static/css/favicon.png">
 
+  <script src="http://ariutta.github.io/svg-pan-zoom/dist/svg-pan-zoom.js"></script>
 </head>
 <body>
 
@@ -40,6 +41,8 @@
   </div>
 
   <div class="container">
+    <embed type="image/svg+xml" src="/static/images/F16.svg" id="svg-container"/>
+
 
     <!-- Tab Navigation -->
     <ul class="tab-nav">
@@ -80,6 +83,14 @@
     <div class="tab-pane" id="view-data">
     </div>
   </div>
+
+  <script>
+    // var panZoomTiger = svgPanZoom('#svg-container');
+    document.getElementById('svg-container').addEventListener('load', function(){
+      // Will get called after embed element was loaded
+      svgPanZoom(document.getElementById('svg-container'));
+    })
+  </script>
   
 
 <!-- End Document

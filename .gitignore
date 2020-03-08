@@ -1,2 +1,3 @@
 encoder/venv/
 *.pyc
+pages/node_modules/
